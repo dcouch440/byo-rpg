@@ -1,5 +1,5 @@
 {
-  "name": "webpack-template",
+  "name": "byo-rpg",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
@@ -32,4 +32,4 @@
     "webpack-cli": "^3.3.8",
     "webpack-dev-server": "^3.8.0"
   }
-}
+  }

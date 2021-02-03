@@ -1,0 +1,58 @@
+getchar(charname){
+  return this.toon[charname];
+}
+
+class rpg {
+  constructor() {
+    toon: {};
+  }
+  makeChar(name) {
+    this._toon[name] = new Char(name)
+  }
+}
+
+class Char {
+  constructor(name, armor) {
+    this._name = name;
+    this.health = 400;
+  }
+}
+
+Whiteboard: 
+
+Actor
+ - stats (for combat and role play)
+    * name
+    * health
+    * strength
+    * defense
+
+  Character
+  - stats (for combat and role play)
+      * name
+      * health
+      * strength
+      * defense
+  - equipment
+  - inventory
+
+  Enemies
+  - stats (for combat only)
+      * name
+      * health
+      * strength
+      * defense
+
+Combat
+ - turn based or otherwise
+      * determine course of action
+      * select specific action to take within said course
+      * determine the outcome of said action
+      * display/communicate outcome to player
+      * repeat until character or enemy health = 0
+ - 
+ - accuracy and damage calculation
+ - determine a victor
+
+Theme
+ - Fantasy
