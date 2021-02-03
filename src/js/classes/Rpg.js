@@ -1,12 +1,6 @@
+import * as utils from '../utils.js'
 import {Actor} from './Actor.js';
-const checkValid = (actorName, thisArg) => {
-  const {actors} = thisArg;
-  if (Object.entries(actors).length !== 0) {
-    return Object.keys(actors).includes(actorName) ? `${actorName}Jr` : actorName;
-  } else {
-    return actorName;
-  }
-};
+
 export class Rpg {
   constructor() {
     this.actors = {};
@@ -15,7 +9,7 @@ export class Rpg {
     return this.actors[actorName];
   }
   setActor(actorName) {
-    let validName = checkValid(actorName, this);
+    let validName = utils.checkValid(actorName, this);
     let newChar = new Actor(validName);
     const {name} = newChar;
     this.actors[name] = newChar;

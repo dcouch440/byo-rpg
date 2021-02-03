@@ -22,7 +22,7 @@ describe('Rpg', () => {
     rpg.setActor("Bob")
     rpg.getHealth("Bob")
     expect(rpg.getHealth("Bob")).toEqual(400);
-  })
+  });
   test("It will decrease the health of an Actor by the given argument value", () => {
     rpg.setActor("Bob")
     rpg.setDamage("Bob", 200)
