@@ -8,6 +8,7 @@ describe('Rpg', () => {
   test("It will create an object that holds the object for our actors", () => {
     expect(rpg).toEqual({actors: {}});
   });
+
   
   test("It will set an Actor object inside the actors object within the Rpg object.", () => {
     rpg.setActor("Bob");
@@ -16,4 +17,8 @@ describe('Rpg', () => {
     expect(health).toEqual(400);
   });
   
+  test("It will return an Actor object with Bob as its name and 400 as its health.", () => {
+    rpg.setActor("Bob");
+    expect(rpg.getActor("Bob")).toEqual(undefined);
+  });
 })
