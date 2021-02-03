@@ -3,7 +3,6 @@ import {Rpg} from './classes/Rpg.js';
 
 let rpg = new Rpg()
 
-rpg.setActor('David');
-rpg.setActor('David');
+rpg.setActor('Bob');
 
-console.log(rpg);
+console.log(rpg.actors['Bob']);

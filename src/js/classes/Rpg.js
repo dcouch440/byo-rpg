@@ -11,6 +11,8 @@ export class Rpg {
   constructor() {
     this.actors = {};
   }
+  // "Bob" -> this.actors
+  // this.actors = {"Bob", Actor{"Bob",400}}}
   setActor(actorName) {
     let validName = checkValid(actorName, this);
     let newChar = new Actor(validName);

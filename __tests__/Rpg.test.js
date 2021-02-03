@@ -11,6 +11,9 @@ describe('Rpg', () => {
   
   test("It will set an Actor object inside the actors object within the Rpg object.", () => {
     rpg.setActor("Bob");
-    expect(rpg).toEqual(undefined);
+    const {name, health} = rpg.actors["Bob"];
+    expect(name).toEqual("Bob");
+    expect(health).toEqual(400);
   });
+  
 })
