@@ -22,30 +22,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">16.67% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2/12</span>
+                <span class='fraction'>9/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">25% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>1/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">20% </span>
+                <span class="strong">60% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/5</span>
+                <span class='fraction'>3/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">16.67% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2/12</span>
+                <span class='fraction'>9/12</span>
             </div>
         
             
@@ -54,7 +54,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -86,22 +86,22 @@
 <a name='L28'></a><a href='#L28'>28</a>
 <a name='L29'></a><a href='#L29'>29</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -113,23 +113,23 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {Actor} from './Actor.js';
-const checkValid = <span class="fstat-no" title="function not covered" >(a</span>ctorName, thisArg) =&gt; {
-  const {actors} = <span class="cstat-no" title="statement not covered" >thisArg;</span>
-<span class="cstat-no" title="statement not covered" >  if (Object.entries(actors).length !== 0) {</span>
+const checkValid = (actorName, thisArg) =&gt; {
+  const {actors} = thisArg;
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (Object.entries(actors).length !== 0) {
 <span class="cstat-no" title="statement not covered" >    return Object.keys(actors).includes(actorName) ? `${actorName}Jr` : actorName;</span>
   } else {
-<span class="cstat-no" title="statement not covered" >    return actorName;</span>
+    return actorName;
   }
 };
 export class Rpg {
   constructor() {
     this.actors = {};
   }
-<span class="fstat-no" title="function not covered" >  se</span>tActor(actorName) {
-    let validName = <span class="cstat-no" title="statement not covered" >checkValid(actorName, this);</span>
-    let newChar = <span class="cstat-no" title="statement not covered" >new Actor(validName);</span>
-    const {name} = <span class="cstat-no" title="statement not covered" >newChar;</span>
-<span class="cstat-no" title="statement not covered" >    this.actors[name] = newChar;</span>
+  setActor(actorName) {
+    let validName = checkValid(actorName, this);
+    let newChar = new Actor(validName);
+    const {name} = newChar;
+    this.actors[name] = newChar;
   }
 <span class="fstat-no" title="function not covered" >  ge</span>tHealth(nameKey) {
 <span class="cstat-no" title="statement not covered" >    return this.actors[nameKey].health;</span>
@@ -147,7 +147,7 @@ export class Rpg {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Feb 03 2021 14:14:51 GMT-0800 (Pacific Standard Time)
+                at Wed Feb 03 2021 14:21:43 GMT-0800 (Pacific Standard Time)
             </div>
         </div>
         <script src="prettify.js"></script>
