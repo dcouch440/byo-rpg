@@ -6,6 +6,6 @@ describe("Actor", () => {
     actor = new Actor("Bob")
   })
   test("It will create an object with the given argument as name", () => {
-    expect(actor).toEqual(undefined);
+    expect(actor).toEqual({"name":"Bob","health":400});
   }) 
 })
