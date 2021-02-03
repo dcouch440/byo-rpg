@@ -19,6 +19,6 @@ describe('Rpg', () => {
   
   test("It will return an Actor object with Bob as its name and 400 as its health.", () => {
     rpg.setActor("Bob");
-    expect(rpg.getActor("Bob")).toEqual(undefined);
+    expect(rpg.getActor("Bob")).toEqual({"name":"Bob","health":400});
   });
 })
