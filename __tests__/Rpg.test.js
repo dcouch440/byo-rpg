@@ -6,6 +6,6 @@ describe('Rpg', () => {
     rpg = new Rpg();
   });
   test("It will create an object that holds the object for our actors", () => {
-    expect(rpg).toEqual(undefined);
+    expect(rpg).toEqual({actors: {}});
   });
 })
