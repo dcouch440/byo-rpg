@@ -21,7 +21,7 @@ describe('Rpg', () => {
   test ("It will return the current value of the given Actors health", () => {
     rpg.setActor("Bob")
     rpg.getHealth("Bob")
-    expect(rpg.getHealth("Bob")).toEqual(undefined);
+    expect(rpg.getHealth("Bob")).toEqual(400);
   })
   // test("It will decrease the health of an Actor by the given argument value", () => {
   //   rpg.setActor("Bob")
