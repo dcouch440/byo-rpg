@@ -7,8 +7,6 @@ describe("checkValid", () => {
   });
   test("It will check if the key values already exist and return Jr at the end of the argument value", () => {
     rpg.setActor('Bob');
-    rpg.setActor('Bob');
-    checkValid('David', rpg);
-    expect(rpg.actors).toEqual(undefined);
+    expect(checkValid('Bob', rpg)).toEqual('BobJr');
   });
 })
