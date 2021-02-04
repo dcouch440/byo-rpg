@@ -10,6 +10,6 @@ describe("checkValid", () => {
     expect(checkValid('Bob', rpg)).toEqual('BobJr');
   });
   test("It will check if the key values already exist and return the input value if the value is not found", () => {
-    expect(checkValid('Bob', rpg)).toEqual(undefined)
+    expect(checkValid('Bob', rpg)).toEqual('Bob');
   })
 })
