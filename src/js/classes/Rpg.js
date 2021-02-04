@@ -7,6 +7,13 @@ export class Rpg {
     this.actorsArray = undefined;
     this.currentTurn = '';
   }
+  *turn () {
+    let i = 0;
+    if(i < this.actorsArray.length - 1) {i = 0}
+    while(true) {
+      yield this.actorsArray[i++]
+    }
+  }
   getActor(actorName) {
     return this.actors[actorName];
   }
@@ -26,3 +33,4 @@ export class Rpg {
     );
   }
 }
+

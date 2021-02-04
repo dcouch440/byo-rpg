@@ -35,4 +35,9 @@ describe('Rpg', () => {
     expect(rpg.actorsArray).toEqual(['Bob', "BobJr"])
   });
   
+  test("It will select Actors turns from an array", () => {
+    rpg.setActor('Bob');
+    let value = rpg.turn().next.value;
+    expect(value).toEqual('Bob')
+  }) 
 })

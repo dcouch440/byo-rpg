@@ -94,3 +94,38 @@ exg .1                                                                          
     * rpg.setAscendance('Bob', rollValue);                                                  //////////////\\\\\
 // turn values should be held in the object.                                               ////////////////\\\\\
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////\\\\\ 
+
+
+
+
+Combat
+ - turn based or otherwise
+      * determine course of action
+      * select specific action to take within said course
+      * determine the outcome of said action
+      * display/communicate outcome to player
+      * repeat until character or enemy health = 0
+ - 
+ - accuracy and damage calculation
+ - determine a victor
+
+
+Class combat(actor1, actor2)
+{
+  "Fight between x and y!"
+  while(actor1.health>0 && actor2.health>0)
+  {
+    reads who's turn it is => current actor
+    currentactor chooses an action (need set of action options (fight, item, defend, run))
+    if (fight)
+      calculate damage 
+      idleactor takes damage
+    if (item)
+      ......
+    if (defend)
+      temporarily increase defense
+    if (run)
+      break fight (break loop or class (?) or function)
+    
+
+}

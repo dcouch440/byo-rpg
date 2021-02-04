@@ -16,25 +16,25 @@ const display = (rpg, actorArg) => {
     </div>
   `
 }
-const myFunction = (typeOfEnemy, gameAction) => {
-  const turnFunc = (cond) => {
-    const conditional = {
-      '1': () => 'the ran',
-      '2': () => 'actor Obj',
-      '3': () => 'none-apply'
-    }
-    return (conditional[cond] || conditional['default'])()
-  }
-  const actionFunc = (cond = gameAction) => {
-    const conditional = {
-      '1' : (actor) => 'home' + actor ,
-      'damage turn' : (actor) => 'damage turn' + actor,
-      'default': () => 'none-apply'
-    }
-    return (conditional[cond] || conditional['default'])(turnFunc(typeOfEnemy))
-  }
-  return actionFunc()
-}
+// const myFunction = (typeOfEnemy, gameAction) => {
+//   const turnFunc = (cond) => {
+//     const conditional = {
+//       '1': () => 'the ran',
+//       '2': () => 'actor Obj',
+//       '3': () => 'none-apply'
+//     }
+//     return (conditional[cond] || conditional['default'])()
+//   }
+//   const actionFunc = (cond = gameAction) => {
+//     const conditional = {
+//       '1' : (actor) => 'home' + actor ,
+//       'damage turn' : (actor) => 'damage turn' + actor,
+//       'default': () => 'none-apply'
+//     }
+//     return (conditional[cond] || conditional['default'])(turnFunc(typeOfEnemy))
+//   }
+//   return actionFunc()
+// }
 
 document.addEventListener('DOMContentLoaded',() => {
   const ourElement = document.getElementById('exist');
