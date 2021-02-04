@@ -32,7 +32,7 @@ describe('Rpg', () => {
   test("It will add actor names to an actor Array", () => {
     rpg.setActor('Bob');
     rpg.setActor('Bob');
-    expect(rpg.actorsArray).toEqual(undefined)
+    expect(rpg.actorsArray).toEqual(['Bob', "BobJr"])
   });
-
+  
 })
