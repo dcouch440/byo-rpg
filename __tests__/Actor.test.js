@@ -3,7 +3,7 @@ import {Actor} from '../src/js/classes/Actor.js'
 describe("Actor", () => {
   let actor;
   beforeEach(() => {
-    actor = new Actor("Bob")
+    actor = new Actor("Bob", 400, 10, 3)
   });
   test("It will create an object with the given argument as name", () => {
     expect(actor).toEqual({"name":"Bob","health":400,"attack":10,"defense": 3});

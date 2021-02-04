@@ -9,9 +9,9 @@ export class Rpg {
     this.currentTurn = '';
   }
   *turn () {
-    let i = 0;
+    let i = 1;
     while(true) {
-      if(i > this.actorsArray.length - 1){i = 0}
+      if(i > this.actorsArray.length - 1){i = 1}
       this.currentTurn = this.actorsArray[i];
       yield this.actorsArray[i++];
     }
@@ -19,9 +19,9 @@ export class Rpg {
   getActor(actorName) {
     return this.actors[actorName];
   }
-  setActor(actorName) {
+  setActor(actorName, health = 400, attack = 30, defence = 5) {
     let validName = utils.checkValid(actorName, this);
-    let newChar = new Actor(validName);
+    let newChar = new Actor(validName, health, attack, defence);
     const {name} = newChar;
     this.actors[name] = newChar;
     this.actorsArray = Object.keys(this.actors);

@@ -1,11 +1,11 @@
 import '../css/styles.css';
 import {Rpg} from './classes/Rpg.js';
 
-let rpg = new Rpg()
- 
-rpg.setActor('Bob');
-
-console.log(rpg.actors['Bob']);
+let rpg = new Rpg();
+rpg.setActor('Monster');
+rpg.setActor('Player', 500, 100, 10);
+console.log(rpg.actors)
+// console.log(rpg.actors['Bob']);
 
 const display = (rpg, actorArg) => {
   const actor = rpg.getActor(actorArg)
@@ -14,7 +14,8 @@ const display = (rpg, actorArg) => {
       <p>${actor.name}</p>
       <p>${actor.health}</p>
     </div>
-  `
+    `
+
 }
 // const myFunction = (typeOfEnemy, gameAction) => {
 //   const turnFunc = (cond) => {
@@ -53,12 +54,13 @@ const action = (turnAction) => {
 document.addEventListener('DOMContentLoaded',() => {
   const ourElement = document.getElementById('exist');
   const actionButtons = document.getElementById('button-container');
-  ourElement.innerHTML = display(rpg, "Bob");
+  ourElement.innerHTML = display(rpg, "Monster");
   actionButtons.addEventListener('click', (event) => {
     const {id} = event.target
     action(id)
-    rpg.setDamage('Bob', 200);
-    ourElement.innerHTML = display(rpg, "Bob");
+    rpg.setDamage('Monster',10);
+    
+    ourElement.innerHTML = display(rpg, "Monster");
     // if(rpg.getHealth("Bob") <= 0)
     // {
     //   ourElement.innerHTML = "Bob dead";
