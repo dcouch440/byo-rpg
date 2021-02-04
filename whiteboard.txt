@@ -109,6 +109,37 @@ Combat
  - accuracy and damage calculation
  - determine a victor
 
+check
+
+combat([playersarray], monster)
+{
+  "Fight with monster!"
+  if( all players health>0 && monster.health>0)
+  {
+    reads who's turn it is => current actor
+    if(current actor = player)
+      player chooses an action (need set of action options (fight, item, defend, run))
+        if (fight)
+          calculate damage (player attack - monster defense)
+          monster takes damage
+        if (item)
+          ......
+        if (defend)
+          temporarily increase defense
+        if (run)
+          break fight (break loop or class (?) or function)
+    if(current actor = monster)
+    {
+      monster chooses fight
+        [if monster has set of attacks, then attack chosen is based on probability]
+      calculate damage (monster attack - player defense)
+      player takes damage
+    }
+    change turn;
+  }
+
+}
+
 
 Class combat(actor1, actor2)
 {
@@ -126,6 +157,6 @@ Class combat(actor1, actor2)
       temporarily increase defense
     if (run)
       break fight (break loop or class (?) or function)
-    
+    change turn;
 
 }

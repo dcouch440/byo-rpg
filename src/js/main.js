@@ -35,13 +35,33 @@ const display = (rpg, actorArg) => {
 //   }
 //   return actionFunc()
 // }
+const action = (turnAction) => {
+  const conditional = {
+    'fight': () => {
+      console.log('Hello1')
+    }, "item": () => {
+      console.log('Hello2')
+    }, 'defend': () => {
+      console.log('Hello3')
+    }, 'run': () => {
+      console.log('Hello4')
+    }, 'default': () => null
+  }
+  return (conditional[turnAction] || conditional['default'])()
+}
 
 document.addEventListener('DOMContentLoaded',() => {
   const ourElement = document.getElementById('exist');
-  const ourButton = document.getElementById('button-proto');
+  const actionButtons = document.getElementById('button-container');
   ourElement.innerHTML = display(rpg, "Bob");
-  ourButton.addEventListener('click', () => {
-    rpg.setDamage('Bob', 5);
+  actionButtons.addEventListener('click', (event) => {
+    const {id} = event.target
+    action(id)
+    rpg.setDamage('Bob', 200);
     ourElement.innerHTML = display(rpg, "Bob");
-  })
-} )
+    // if(rpg.getHealth("Bob") <= 0)
+    // {
+    //   ourElement.innerHTML = "Bob dead";
+    // }
+  });
+})

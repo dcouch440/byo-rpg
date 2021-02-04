@@ -16,7 +16,7 @@ describe('Rpg', () => {
   });
   test("It will return an Actor object with Bob as its name and 400 as its health.", () => {
     rpg.setActor("Bob");
-    expect(rpg.getActor("Bob")).toEqual({"name":"Bob","health":400});
+    expect(rpg.getActor("Bob")).toEqual({"name":"Bob","health":400,"attack":10,"defense": 3});
   });
   test ("It will return the current value of the given Actors health", () => {
     rpg.setActor("Bob");
@@ -37,7 +37,11 @@ describe('Rpg', () => {
   
   test("It will select Actors turns from an array", () => {
     rpg.setActor('Bob');
-    let value = rpg.turn().next.value;
-    expect(value).toEqual('Bob')
+    rpg.setActor('Doe');
+    let turn = rpg.turn();
+    turn.next();
+    turn.next();
+    expect(turn.next().value).toEqual('Bob');
+    expect(rpg.currentTurn).toEqual('Bob');
   }) 
 })

@@ -2,5 +2,7 @@ export class Actor {
   constructor(name) {
     this.name = name;
     this.health = 400;
+    this.attack = 10;
+    this.defense = 3;
   }
 }

@@ -1,5 +1,6 @@
 import * as utils from '../utils.js';
 import {Actor} from './Actor.js';
+import {Monster} from './Monster.js';
 
 export class Rpg {
   constructor() {
@@ -9,9 +10,10 @@ export class Rpg {
   }
   *turn () {
     let i = 0;
-    if(i < this.actorsArray.length - 1) {i = 0}
     while(true) {
-      yield this.actorsArray[i++]
+      if(i > this.actorsArray.length - 1){i = 0}
+      this.currentTurn = this.actorsArray[i];
+      yield this.actorsArray[i++];
     }
   }
   getActor(actorName) {
