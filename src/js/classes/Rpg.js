@@ -4,6 +4,8 @@ import {Actor} from './Actor.js';
 export class Rpg {
   constructor() {
     this.actors = {};
+    this.actorsArray = undefined;
+    this.currentTurn = '';
   }
   getActor(actorName) {
     return this.actors[actorName];
