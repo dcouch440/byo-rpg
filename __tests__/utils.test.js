@@ -12,8 +12,4 @@ describe("checkValid", () => {
   test("It will check if the key values already exist and return the input value if the value is not found", () => {
     expect(checkValid('Bob', rpg)).toEqual('Bob');
   })
-    test("It will add actor names to an actor Array", () => {
-      rpg.setActor('Bob');
-      expect(rpg.actorsArray).toEqual(['Bob'])
-    })
 })

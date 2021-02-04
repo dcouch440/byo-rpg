@@ -28,4 +28,11 @@ describe('Rpg', () => {
     rpg.setDamage("Bob", 200);
     expect(rpg.getHealth("Bob")).toEqual(200);
   });
+  
+  test("It will add actor names to an actor Array", () => {
+    rpg.setActor('Bob');
+    rpg.setActor('Bob');
+    expect(rpg.actorsArray).toEqual(undefined)
+  });
+
 })

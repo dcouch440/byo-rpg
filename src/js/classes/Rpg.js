@@ -1,4 +1,4 @@
-import * as utils from '../utils.js'
+import * as utils from '../utils.js';
 import {Actor} from './Actor.js';
 
 export class Rpg {
@@ -15,6 +15,7 @@ export class Rpg {
     let newChar = new Actor(validName);
     const {name} = newChar;
     this.actors[name] = newChar;
+    this.actorsArray = Object.keys(this.actors);
   }
   getHealth(nameKey) {
     return this.actors[nameKey].health;
