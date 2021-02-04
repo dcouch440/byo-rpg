@@ -24,9 +24,10 @@ describe('Rpg', () => {
     expect(rpg.getHealth("Bob")).toEqual(400);
   });
   test("It will decrease the health of an Actor by the given argument value", () => {
-    rpg.setActor("Bob");
-    rpg.setDamage("Bob", 200);
-    expect(rpg.getHealth("Bob")).toEqual(200);
+    rpg.setActor('Monster', 5000, 20, 10);
+    rpg.setActor('Player', 500, 100, 10);
+    rpg.setDamage('Player', "Monster");
+    expect(rpg.getHealth("Monster")).toEqual(4910);
   });
   
   test("It will add actor names to an actor Array", () => {

@@ -29,10 +29,14 @@ export class Rpg {
   getHealth(nameKey) {
     return this.actors[nameKey].health;
   }
-  setDamage(nameKey, damage) {
-    this.actors[nameKey].health = (
-      this.actors[nameKey].health - damage
-    );
+  setDamage(nameKey1, nameKey2, defending = 0) {
+    this.actors[nameKey2].health -= 
+    (this.actors[nameKey1].attack - this.actors[nameKey2].defense - defending*5);
+  }
+
+  gainHealth(nameKey, hp)
+  {
+    this.actors[nameKey].health += hp;
   }
 }
 
