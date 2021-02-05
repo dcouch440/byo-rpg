@@ -1,6 +1,5 @@
 import * as utils from '../utils.js';
 import {Actor} from './Actor.js';
-import {Monster} from './Monster.js';
 
 export class Rpg {
   constructor() {
@@ -37,6 +36,16 @@ export class Rpg {
   gainHealth(nameKey, hp)
   {
     this.actors[nameKey].health += hp;
+  }
+  checkIfDead()
+  {
+  let objects = Object.values(this.actors);
+  for(const actor of objects){
+
+    if(actor.health <= 0)
+      return actor.name;
+  }
+  return null;
   }
 }
 

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
 * {
   box-sizing: border-box;
 }
@@ -6,4 +7,58 @@ html, body {
   padding: 0;
   height: 100%;
   width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: azure;
+  box-shadow: inset 0px 0px 20px 0px rgba(0, 0, 0, 0.651);
+}
+#exist {
+  display: flex;
+  flex: 1 0 400px;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  padding: 50px;
+  background-color: rgb(49, 49, 49);
+  border: 1px solid black;
+  margin: 2px;
+  font-family: 'Cedarville Cursive', cursive;
+  font-weight: 900;
+  border-radius: 10px;
+  color: white;
+  text-shadow: 1px 0px 1px black, -1px 0px 1px black, 0px 0px 1px black;
+  box-shadow: 1px 0px 2px 1px black;
+}
+.card > div {
+  background-color: rgba(0, 0, 0, 0.616);
+  margin: 5px;
+  padding: 2px 15px;
+  border: 2px solid black;
+}
+#button-container {
+  display: flex;
+  margin-right: 5%;
+  flex-grow: 1;
+  flex-direction: column;
+  
+}
+#button-container > button {
+  padding: 5px;
+  margin: 1px;
+  background-color: black;
+  color: white;
+  font-family: monospace;
+  border-radius: 2px solid rgb(255, 255, 255);
+  text-shadow: 1px 0px 1px black, -1px 0px 1px black, 0px 0px 1px black;
+  box-shadow: 0px 0px 2px 1px black;
+}
+#button-container > button:hover {
+  background-color: azure;
+  transition: .5s;
+  color: black;
+}
+
+#button-container > button:focus {
+  outline-style: none;
 }
